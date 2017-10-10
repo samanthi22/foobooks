@@ -12,16 +12,6 @@
 */
 
 Route::view('/', 'welcome');
-
-Route::get('/books', function () {
-	return 'Here are all the books...';
-});
-
-Route::get('/book', function () {
-	return 'Show all the books...';
-});
-
-Route::get('/book/{title?}', function($title = '') {
-	return 'You are viewing '.$title;
-});
+Route::get('/book/', 'BookController@index');
+Route::get('/book/{title}', 'BookController@show');
 
