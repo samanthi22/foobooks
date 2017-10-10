@@ -11,6 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::view('/', 'welcome');
+
+Route::get('/books', function () {
+	return 'Here are all the books...';
 });
+
+Route::get('/book', function () {
+	return 'Show all the books...';
+});
+
+Route::get('/book/{title?}', function($title = '') {
+	return 'You are viewing '.$title;
+});
+
